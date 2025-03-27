@@ -1,4 +1,4 @@
-import Navbar from "@/components/ui/navbar";
+import Navbar from "@/components/ui/Navbar";
 import { SEO } from "../components/global";
 import Hero from "@/components/ui/Hero";
 
