@@ -1,7 +1,7 @@
 import Navbar from "@/components/ui/Navbar";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-
+import { SEO } from "../components/global";
 export default function Signup() {
   const [role, setRole] = useState<"student" | "landlord" | "">("");
   const navigate = useNavigate();
@@ -18,6 +18,7 @@ export default function Signup() {
 
   return (
     <>
+      <SEO title="AccomX | SignUp" />
       <Navbar />
       <div className="flex justify-center items-center mt-7">
         <main className="min-h-screen bg-gradient-to-b from-white to-gray-50 w-9/12 py-8 flex flex-col items-center border border-gray-200 rounded shadow-lg">
