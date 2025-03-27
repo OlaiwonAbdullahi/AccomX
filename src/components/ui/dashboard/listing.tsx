@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import ProductCard from "./productCard";
+import ProductCard from "./ProductCard";
 
 const Listing = () => {
   const [products, setProducts] = useState([]);
@@ -14,6 +14,7 @@ const Listing = () => {
           throw new Error("Failed to fetch product data");
         }
         const data = await response.json();
+        setProducts(data);
         console.log(data);
       } catch (error) {
         console.error(error.message);
@@ -24,9 +25,19 @@ const Listing = () => {
   }, []);
 
   return (
-    <div className="px-4">
+    <div className="px-4 flex flex-wrap gap-6">
       {products.length > 0 ? (
-        products.map((product) => <ProductCard key={product.id} {...product} />)
+        products.map((product) => (
+          <ProductCard
+            key={product.id}
+            name={product.name} // Adjust as needed
+            image={product.image}
+            description={product.description}
+            longitude={product.longitude}
+            latitude={product.latitude}
+            price={product.price} // You can update this with dynamic pricing if available
+          />
+        ))
       ) : (
         <p>Loading...</p>
       )}
