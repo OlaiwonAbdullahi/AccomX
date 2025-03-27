@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { LuLayoutGrid } from "react-icons/lu";
-import { FaHome, FaBell, FaEnvelope, FaCog } from "react-icons/fa";
+import { PiGearSix } from "react-icons/pi";
 import { LiaTimesSolid } from "react-icons/lia";
-
+import { TbSmartHome } from "react-icons/tb";
+import { TfiBell } from "react-icons/tfi";
+import { LuMessageCircle, LuUsers } from "react-icons/lu";
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -22,7 +24,7 @@ const Menu = () => {
               key={index}
               className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 rounded-md cursor-pointer"
             >
-              <Icon className="text-gray-700" />
+              <Icon className="text-gray-700 size-5" />
               <span className="text-gray-800">{label}</span>
             </li>
           ))}
@@ -31,7 +33,7 @@ const Menu = () => {
 
       {/* Floating Button */}
       <button
-        className="bg-[#8C52FF] w-12 h-12 flex items-center justify-center rounded-full shadow-md text-white"
+        className="bg-[#8C52FF] w-12 h-12 flex items-center justify-center rounded-full shadow-md z-50 text-white"
         onClick={() => setIsOpen(!isOpen)}
       >
         {isOpen ? (
@@ -45,10 +47,11 @@ const Menu = () => {
 };
 
 const menuItems = [
-  { icon: FaHome, label: "Home" },
-  { icon: FaBell, label: "Notifications" },
-  { icon: FaEnvelope, label: "Messages" },
-  { icon: FaCog, label: "Settings" },
+  { icon: TbSmartHome, label: "Home" },
+  { icon: LuUsers, label: "Roomates" },
+  { icon: TfiBell, label: "Notifications" },
+  { icon: LuMessageCircle, label: "Messages" },
+  { icon: PiGearSix, label: "Settings" },
 ];
 
 export default Menu;
