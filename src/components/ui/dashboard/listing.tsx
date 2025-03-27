@@ -1,8 +1,19 @@
 import { useEffect, useState } from "react";
-import ProductCard from "./ProductCard";
+import ProductCard from "./productCard";
+
+interface Product {
+  id: string;
+  name: string;
+  image: string;
+  description: string;
+  longitude: number;
+  latitude: number;
+  price: string;
+}
 
 const Listing = () => {
-  const [products, setProducts] = useState([]);
+  // Explicitly type the state as an array of Product
+  const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
     const fetchAllProducts = async () => {
@@ -13,11 +24,10 @@ const Listing = () => {
         if (!response.ok) {
           throw new Error("Failed to fetch product data");
         }
-        const data = await response.json();
+        const data: Product[] = await response.json(); // Type assertion
         setProducts(data);
-        console.log(data);
       } catch (error) {
-        console.error(error.message);
+        console.error(error);
       }
     };
 
@@ -30,12 +40,13 @@ const Listing = () => {
         products.map((product) => (
           <ProductCard
             key={product.id}
-            name={product.name} // Adjust as needed
+            id={product.id}
+            name={product.name}
             image={product.image}
             description={product.description}
             longitude={product.longitude}
             latitude={product.latitude}
-            price={product.price} // You can update this with dynamic pricing if available
+            price={product.price}
           />
         ))
       ) : (

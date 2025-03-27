@@ -2,7 +2,17 @@ import { GoHeart } from "react-icons/go";
 import Image from "../image";
 import Button from "../button";
 
-const ProductCard = ({
+interface ProductCardProps {
+  id: string;
+  name: string;
+  image: string;
+  description: string;
+  longitude: number;
+  latitude: number;
+  price: string;
+}
+
+const ProductCard: React.FC<ProductCardProps> = ({
   name,
   image,
   description,

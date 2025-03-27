@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { LuLayoutGrid, LuSparkle, LuSparkles } from "react-icons/lu";
+import { LuLayoutGrid, LuSparkles } from "react-icons/lu";
 import { PiGearSix } from "react-icons/pi";
 import { LiaTimesSolid } from "react-icons/lia";
 import { TbSmartHome } from "react-icons/tb";
