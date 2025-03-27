@@ -35,7 +35,7 @@ const Listing = () => {
   }, []);
 
   return (
-    <div className="px-4 flex flex-wrap gap-6">
+    <div className="px-4 flex flex-wrap gap-6 justify-center">
       {products.length > 0 ? (
         products.map((product) => (
           <ProductCard
