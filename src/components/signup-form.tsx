@@ -7,10 +7,10 @@ import {
   FaSpinner,
 } from "react-icons/fa";
 
-import StepOne from "@/components/signup/step-one";
-import SuccessScreen from "./signup/sucess-screen";
-import StepTwo from "./signup/step-two";
-import StepThree from "./signup/step-three";
+import StepOne from "@/components/student-signup/step-one";
+import SuccessScreen from "./student-signup/sucess-screen";
+import StepTwo from "./student-signup/step-two";
+import StepThree from "./student-signup/step-three";
 //import StepTwo from "@/components/signup/step-two";
 //import StepThree from "@/components/signup/step-three";
 //import SuccessScreen from "@/components/signup/success-screen";
@@ -77,7 +77,7 @@ export default function SignupForm() {
       formData.fullName.trim() !== "" &&
       formData.email.trim() !== "" &&
       formData.phone.trim() !== "" &&
-      formData.dateOfBirth !== "" &&
+      //formData.dateOfBirth !== "" &&
       formData.gender !== ""
     );
   };

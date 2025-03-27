@@ -1,9 +1,10 @@
 //import { useState } from "react";
-import { FaCalendarAlt, FaInfoCircle } from "react-icons/fa";
+//import { FaCalendarAlt } from "react-icons/fa";
 //import DatePicker from "react-datepicker";
 //import "react-datepicker/dist/react-datepicker.css";
 
 import type { FormData } from "@/components/signup-form";
+import { LuBadgeInfo } from "react-icons/lu";
 
 interface StepOneProps {
   formData: FormData;
@@ -92,8 +93,8 @@ export default function StepOne({ formData, updateFormData }: StepOneProps) {
           />
         </div>
 
-        {/* Date of Birth */}
-        <div className="space-y-2">
+        {/* Date of Birth 
+         <div className="space-y-2">
           <label
             htmlFor="dateOfBirth"
             className="block text-sm font-medium text-gray-700"
@@ -101,7 +102,7 @@ export default function StepOne({ formData, updateFormData }: StepOneProps) {
             Date of Birth <span className="text-red-500">*</span>
           </label>
           <div className="relative">
-            {/* <DatePicker
+            <DatePicker
               selected={date}
               onChange={handleDateSelect}
               maxDate={new Date()}
@@ -110,7 +111,7 @@ export default function StepOne({ formData, updateFormData }: StepOneProps) {
               dropdownMode="select"
               placeholderText="Select your date of birth"
               className="w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-[#8C52FF] focus:outline-none focus:ring-1 focus:ring-[#8C52FF]"
-            />*/}
+            />
             <FaCalendarAlt className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400" />
           </div>
           <p className="text-xs text-gray-500">
@@ -125,7 +126,7 @@ export default function StepOne({ formData, updateFormData }: StepOneProps) {
               Gender <span className="text-red-500">*</span>
             </label>
             <div className="group relative">
-              <FaInfoCircle className="h-4 w-4 cursor-help text-gray-400" />
+              <LuBadgeInfo className="h-4 w-4 cursor-help text-gray-400" />
               <div className="absolute left-0 top-6 z-10 hidden w-48 rounded-md bg-gray-800 p-2 text-xs text-white shadow-lg group-hover:block">
                 This helps us with roommate matching and accommodation
                 recommendations
@@ -143,7 +144,7 @@ export default function StepOne({ formData, updateFormData }: StepOneProps) {
                     value={gender}
                     checked={formData.gender === gender}
                     onChange={() => updateFormData({ gender })}
-                    className="h-4 w-4 border-gray-300 text-[#8C52FF] focus:ring-[#8C52FF]"
+                    className="h-4 w-4 border-gray-300 text-[#8C52FF] focus:ring-[#8C52FF] acent-[#8C52FF]"
                   />
                   <label
                     htmlFor={`gender-${gender}`}

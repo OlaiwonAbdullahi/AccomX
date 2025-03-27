@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { LuLayoutGrid } from "react-icons/lu";
+import { LuLayoutGrid, LuSparkle, LuSparkles } from "react-icons/lu";
 import { PiGearSix } from "react-icons/pi";
 import { LiaTimesSolid } from "react-icons/lia";
 import { TbSmartHome } from "react-icons/tb";
@@ -31,17 +31,22 @@ const Menu = () => {
         </ul>
       </div>
 
-      {/* Floating Button */}
-      <button
-        className="bg-[#8C52FF] w-12 h-12 flex items-center justify-center rounded-full shadow-md z-50 text-white"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        {isOpen ? (
-          <LiaTimesSolid className="size-6" />
-        ) : (
-          <LuLayoutGrid className="size-6" />
-        )}
-      </button>
+      <div className=" flex gap-2">
+        <button className="bg-[#8C52FF] w-12 h-12 flex items-center justify-center rounded-full shadow-md z-50 text-white">
+          <LuSparkles className="size-6" />
+        </button>
+
+        <button
+          className="bg-[#8C52FF] w-12 h-12 flex items-center justify-center rounded-full shadow-md z-50 text-white"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? (
+            <LiaTimesSolid className="size-6" />
+          ) : (
+            <LuLayoutGrid className="size-6" />
+          )}
+        </button>
+      </div>
     </div>
   );
 };
