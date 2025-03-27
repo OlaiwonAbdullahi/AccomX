@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        // add fonts families to the theme
+        Sora: ["Sora", "sans-serif"],
       },
 
       keyframes: {

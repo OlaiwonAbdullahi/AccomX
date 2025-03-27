@@ -1,11 +1,14 @@
+import Navbar from "@/components/ui/navbar";
 import { SEO } from "../components/global";
+import Hero from "@/components/ui/Hero";
 
 export default function Home() {
   return (
     <>
-      <SEO title="Home" />
-      <div className="min-h-[100dvh] mx-auto flex flex-col items-center justify-center text-black text-[40px]">
-        Home
+      <SEO title="AccomX | Home" />
+      <div className="  min-h-[100dvh] mx-auto flex flex-col text-black">
+        <Navbar />
+        <Hero />
       </div>
     </>
   );

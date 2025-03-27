@@ -8,6 +8,9 @@ import { useEffect } from "react";
 import { Home, NotFound } from "./pages";
 
 import { Scroll } from "./animation";
+import Signup from "./pages/signup";
+import Login from "./pages/login";
+import Dashboard from "./pages/dashboard";
 
 // this is just for dome pages you want to repeat same component
 const Root = () => {
@@ -30,6 +33,18 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "/signup",
+        element: <Signup />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/dashboard",
+        element: <Dashboard />,
       },
 
       {

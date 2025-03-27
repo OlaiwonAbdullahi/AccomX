@@ -17,7 +17,7 @@ export default function Button(props: ButtonProps) {
       disabled={loading || disabled}
       className={clsx(
         !noDefault &&
-          "w-full px-[14.18px] py-[10.51px] rounded-[2.1px] lg:px-[28px] lg:py-[17px] lg:rounded-[8px] grid place-items-center text-white  -tracking-[0.38px] font-semibold font-mon text-center leading-[21px] disabled:cursor-not-allowed disabled:bg-opacity-60 transition-all duration-300 active:scale-[0.97]",
+          "w-full px-[14.18px] py-[10.51px] rounded-[2.1px] lg:px-[28px] lg:py-[17px] lg:rounded-[8px] grid place-items-center  -tracking-[0.38px] font-semibold font-mon text-center leading-[21px] disabled:cursor-not-allowed disabled:bg-opacity-60 transition-all duration-300 active:scale-[0.97]",
         className
       )}
       {...prop}
