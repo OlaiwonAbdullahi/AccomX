@@ -14,7 +14,7 @@ const Listing = () => {
           throw new Error("Failed to fetch product data");
         }
         const data = await response.json();
-        setProducts(data);
+        console.log(data);
       } catch (error) {
         console.error(error.message);
       }
