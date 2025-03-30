@@ -22,12 +22,19 @@ const DashboardNavbar = () => {
           <GoSearch className=" text-[#8C52FF] text-xl " />
         </div>
         <div className="flex items-center gap-3">
-          <div className="">
-            <LuMessageCircle className="size-5" />
-          </div>
-          <div className="">
-            <User className=" size-7" />
-          </div>
+          <Link to="/message">
+            <div className=" flex">
+              <LuMessageCircle className="size-5 hover:text-[#8C52FF] text-black" />
+              <sup className=" text-white text-xs w-4 flex items-center justify-center rounded-full  bg-[#8C52FF]">
+                2
+              </sup>
+            </div>
+          </Link>
+          <Link to="/settings">
+            <div className="">
+              <User className=" size-7" />
+            </div>
+          </Link>
         </div>
       </div>
     </div>

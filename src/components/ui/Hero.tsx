@@ -11,15 +11,15 @@ const Hero = () => {
   return (
     <div>
       <div className=" flex flex-col justify-center items-center h-auto gap-5 bg-white font-Sora p-5">
-        <h1 className=" text-5xl  text-[#8C52FF] mt-20">
+        <h1 className="  text-3xl md:text-5xl  text-[#8C52FF] mt-20 text-center">
           Smart & Secure Hostel Living,Simplified.
         </h1>
-        <p className="text-black w-1/2 text-center">
+        <p className="text-black text-sm md:text-base w-full md:w1/2 text-center">
           AccomX simplifies hostel living with AI-powered management, secure
           payments, smart matching, and seamless communication for students,
           landlords, and agents.
         </p>
-        <div className=" flex justify-around w-full text-sm">
+        <div className=" flex md:justify-around justify-center  flex-wrap gap-8 w-full text-sm  mx-auto">
           <div className=" flex items-center gap-2">
             <div className=" text-[#8C52FF] text-xl">
               <RiSecurePaymentLine />

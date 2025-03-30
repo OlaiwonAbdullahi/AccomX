@@ -2,19 +2,19 @@ import DashboardNavbar from "@/components/ui/dashboard/dashboardNavbar";
 import Menu from "@/components/ui/dashboard/menu";
 
 import { SEO } from "../components/global";
-import Listing from "@/components/ui/dashboard/listing";
+import Roomatecard from "@/components/roomates/roomatecard";
 
-const Dashboard = () => {
+const Roomates = () => {
   return (
     <>
-      <SEO title="AccomX | Dashboard" />
+      <SEO title="AccomX | Roomates" />
       <div className=" flex flex-col gap-4 bg-white">
         <DashboardNavbar />
-        <Listing />
+        <Roomatecard />
         <Menu />
       </div>
     </>
   );
 };
 
-export default Dashboard;
+export default Roomates;

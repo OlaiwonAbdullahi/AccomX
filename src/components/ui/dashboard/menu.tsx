@@ -5,8 +5,10 @@ import { LiaTimesSolid } from "react-icons/lia";
 import { TbSmartHome } from "react-icons/tb";
 import { TfiBell } from "react-icons/tfi";
 import { LuMessageCircle, LuUsers } from "react-icons/lu";
+import { Link } from "react-router-dom";
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [openChatbot, setOpenChatbot] = useState(false);
 
   return (
     <div className="fixed bottom-4 right-4  flex flex-col items-end">
@@ -19,21 +21,30 @@ const Menu = () => {
         }`}
       >
         <ul className="flex flex-col gap-2">
-          {menuItems.map(({ icon: Icon, label }, index) => (
-            <li
-              key={index}
-              className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 rounded-md cursor-pointer"
-            >
-              <Icon className="text-gray-700 size-5" />
-              <span className="text-gray-800">{label}</span>
-            </li>
+          {menuItems.map(({ icon: Icon, label, path }, index) => (
+            <Link to={path}>
+              <li
+                key={index}
+                className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 rounded-md cursor-pointer"
+              >
+                <Icon className="text-gray-700 size-5" />
+                <span className="text-gray-800">{label}</span>
+              </li>
+            </Link>
           ))}
         </ul>
       </div>
 
       <div className=" flex gap-2">
-        <button className="bg-[#8C52FF] w-12 h-12 flex items-center justify-center rounded-full shadow-md z-50 text-white">
-          <LuSparkles className="size-6" />
+        <button
+          className="bg-[#8C52FF] w-12 h-12 flex items-center justify-center rounded-full shadow-md z-50 text-white"
+          onClick={() => setOpenChatbot(!openChatbot)}
+        >
+          {openChatbot ? (
+            <LiaTimesSolid className="size-6" />
+          ) : (
+            <LuSparkles className="size-6" />
+          )}
         </button>
 
         <button
@@ -52,11 +63,11 @@ const Menu = () => {
 };
 
 const menuItems = [
-  { icon: TbSmartHome, label: "Home" },
-  { icon: LuUsers, label: "Roomates" },
-  { icon: TfiBell, label: "Notifications" },
-  { icon: LuMessageCircle, label: "Messages" },
-  { icon: PiGearSix, label: "Settings" },
+  { icon: TbSmartHome, label: "Home", path: "/dashboard" },
+  { icon: LuUsers, label: "Roomates", path: "/roomates" },
+  { icon: TfiBell, label: "Notifications", path: "/notification" },
+  { icon: LuMessageCircle, label: "Messages", path: "/message" },
+  { icon: PiGearSix, label: "Settings", path: "/setting" },
 ];
 
 export default Menu;

@@ -37,11 +37,12 @@ const ProductCard: React.FC<ProductCardProps> = ({
       </div>
 
       {/* Description & Price */}
-      <div className="text-xs text-gray-500">{description}</div>
 
-      {/* Price */}
       <div className="flex justify-between items-center w-full">
-        <span className="font-bold text-2xl font-sora">{price}</span>
+        <div className="text-xs text-gray-500">{description}</div>
+
+        {/* Price */}
+        <span className="font-bold text-2xl font-sora">₦{price}</span>
       </div>
 
       {/* CTA Button */}
