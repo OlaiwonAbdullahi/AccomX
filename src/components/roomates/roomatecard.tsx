@@ -1,58 +1,46 @@
 import { LuSend } from "react-icons/lu";
+import { TbListDetails } from "react-icons/tb";
 import { User } from "../svgs";
 import { Button } from "../ui";
-import { TbListDetails } from "react-icons/tb";
 
-const Roomatecard = () => {
+const RoommateCard = () => {
   return (
-    <div>
-      <div className="cursor-pointer border-2 border-[#8C52FF] rounded-lg text-lg font-medium bg-transparent hover:bg-[#8c52ff4d] font-Sora p-2 m-3 flex justify-between items-center gap-4 transition ">
-        <div className=" flex gap-3 p-1 justify-center items-center">
-          <div className=" border-2 border-[#8C52FF] rounded-full size-20 flex justify-center items-center">
-            <User className="size-20" />
-          </div>
-          <div className=" text-sm">
-            <h2>
-              <span className="font-semibold">Name:</span>
-              <span>Abdullahi</span>
-            </h2>
-            <h2>
-              <span className="font-semibold">Faculty:</span>
-              <span>Computing & Infomatics</span>
-            </h2>
-            <h2>
-              <span className="font-semibold">Department:</span>
-              <span>Computer Science</span>
-            </h2>
-            <h2>
-              <span className="font-semibold">Gender:</span>
-              <span>Male</span>
-            </h2>
-          </div>
+    <div className="border-2 border-[#8C52FF] rounded-lg bg-transparent hover:bg-[#8c52ff1a] transition p-4 m-3 flex justify-between items-center gap-6 shadow-sm cursor-pointer">
+      {/* Profile Section */}
+      <div className="flex gap-4 items-center">
+        <div className="border-2 border-[#8C52FF] rounded-full size-20 flex justify-center items-center">
+          <User className="size-16" />
         </div>
-        <div className=" flex-col flex gap-3">
-          <Button className="bg-[#8C52FF] text-white rounded-md font-light ">
-            {" "}
-            <div className=" flex  items-center justify-center gap-2">
-              <div className="">
-                <TbListDetails />
-              </div>
-              <div className="">Details</div>
-            </div>
-          </Button>
-          <Button className="bg-[#8C52FF] text-white rounded-md font-light">
-            {" "}
-            <div className=" flex  items-center justify-center gap-2">
-              <div className="">
-                <LuSend />
-              </div>
-              <div className="">Message</div>
-            </div>
-          </Button>
+        <div className="text-sm space-y-1">
+          <p className="font-semibold">
+            Name: <span className="font-normal">Abdullahi</span>
+          </p>
+          <p className="font-semibold">
+            Faculty:{" "}
+            <span className="font-normal">Computing & Informatics</span>
+          </p>
+          <p className="font-semibold">
+            Department: <span className="font-normal">Computer Science</span>
+          </p>
+          <p className="font-semibold">
+            Gender: <span className="font-normal">Male</span>
+          </p>
         </div>
+      </div>
+
+      {/* Actions Section */}
+      <div className="flex flex-col gap-2">
+        <Button className="bg-[#8C52FF] text-white rounded-md font-medium flex items-center gap-2 px-4 py-2 shadow-md">
+          <TbListDetails className="size-5" />
+          <span>View Details</span>
+        </Button>
+        <Button className="bg-[#8C52FF] text-white rounded-md font-medium flex items-center gap-2 px-4 py-2 shadow-md">
+          <LuSend className="size-5" />
+          <span>Send Message</span>
+        </Button>
       </div>
     </div>
   );
 };
 
-export default Roomatecard;
+export default RoommateCard;

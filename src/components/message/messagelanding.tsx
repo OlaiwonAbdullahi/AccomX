@@ -1,26 +1,32 @@
+import { Link } from "react-router-dom";
 import { User } from "../svgs";
 
-const Messagelanding = ({ children }) => {
+const MessageLanding = ({ children }) => {
   return (
-    <div>
-      <div className=" flex justify-between items-center border-b p-1 mx-2 hover:bg-[#8c52ff42] rounded-lg">
-        <div className=" flex flex-row gap-3 items-center">
-          <div className=" size-10 border-2 border-[#8C52FF] flex items-center rounded-full">
-            <User className=" size-10" />
+    <Link to="/messaging">
+      <div className="flex justify-between items-center border-b p-2 mx-2 hover:bg-[#8c52ff1a] rounded-lg transition cursor-pointer">
+        {/* User Profile Section */}
+        <div className="flex items-center gap-3 min-w-0">
+          <div className="size-10 border-2 border-[#8C52FF] rounded-full flex items-center justify-center">
+            <User className="size-8" />
           </div>
-          <div className=" flex flex-col">
-            <span className="font-semibold text-sm font-Sora">{children}</span>
-            <p className=" text-xs">
+          <div className="flex flex-col min-w-0">
+            <span className="font-semibold text-sm font-Sora truncate">
+              {children}
+            </span>
+            <p className="text-xs text-gray-600 truncate">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </p>
           </div>
         </div>
-        <div className=" bg-[#8C52FF]  flex p-1 text-white rounded-full px-2 text-xs ">
+
+        {/* Unread Message Badge */}
+        <div className="bg-[#8C52FF] flex items-center justify-center text-white rounded-full px-2 py-1 text-xs font-medium">
           <span>2</span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
-export default Messagelanding;
+export default MessageLanding;

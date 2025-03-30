@@ -1,17 +1,23 @@
 import { useState } from "react";
-import { LuLayoutGrid, LuSparkles } from "react-icons/lu";
+import {
+  LuLayoutGrid,
+  LuSparkles,
+  LuMessageCircle,
+  LuUsers,
+} from "react-icons/lu";
 import { PiGearSix } from "react-icons/pi";
 import { LiaTimesSolid } from "react-icons/lia";
 import { TbSmartHome } from "react-icons/tb";
 import { TfiBell } from "react-icons/tfi";
-import { LuMessageCircle, LuUsers } from "react-icons/lu";
 import { Link } from "react-router-dom";
+import Chatbot from "@/components/chatbot/chatbot";
+
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [openChatbot, setOpenChatbot] = useState(false);
 
   return (
-    <div className="fixed bottom-4 right-4  flex flex-col items-end">
+    <div className="fixed bottom-4 left-4 flex flex-col items-start">
       {/* Menu List */}
       <div
         className={`bg-white shadow-lg rounded-lg p-2 transition-all duration-300 ${
@@ -22,11 +28,8 @@ const Menu = () => {
       >
         <ul className="flex flex-col gap-2">
           {menuItems.map(({ icon: Icon, label, path }, index) => (
-            <Link to={path}>
-              <li
-                key={index}
-                className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 rounded-md cursor-pointer"
-              >
+            <Link to={path} key={index}>
+              <li className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 rounded-md cursor-pointer">
                 <Icon className="text-gray-700 size-5" />
                 <span className="text-gray-800">{label}</span>
               </li>
@@ -35,7 +38,9 @@ const Menu = () => {
         </ul>
       </div>
 
-      <div className=" flex gap-2">
+      {/* Floating Buttons */}
+      <div className="flex gap-2">
+        {/* Chat Button */}
         <button
           className="bg-[#8C52FF] w-12 h-12 flex items-center justify-center rounded-full shadow-md z-50 text-white"
           onClick={() => setOpenChatbot(!openChatbot)}
@@ -47,6 +52,7 @@ const Menu = () => {
           )}
         </button>
 
+        {/* Menu Button */}
         <button
           className="bg-[#8C52FF] w-12 h-12 flex items-center justify-center rounded-full shadow-md z-50 text-white"
           onClick={() => setIsOpen(!isOpen)}
@@ -58,6 +64,9 @@ const Menu = () => {
           )}
         </button>
       </div>
+
+      {/* Chat Component - Render outside menu div to avoid layout issues */}
+      <Chatbot open={openChatbot} onClose={() => setOpenChatbot(false)} />
     </div>
   );
 };

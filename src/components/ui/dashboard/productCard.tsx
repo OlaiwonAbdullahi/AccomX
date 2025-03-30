@@ -44,14 +44,20 @@ const ProductCard: React.FC<ProductCardProps> = ({
         {/* Price */}
         <span className="font-bold text-2xl font-sora">₦{price}</span>
       </div>
-
-      {/* CTA Button */}
-      <Button
-        type="submit"
-        className="w-full bg-[#8C52FF] text-white font-medium py-2 rounded-md mt-2 hover:bg-[#7b3de8]"
-      >
-        Place A Bid
-      </Button>
+      <div className=" flex gap-4 items-center">
+        <Button
+          type="submit"
+          className="w-1/2 border-[#8C52FF] border text-[#8C52FF] font-medium py-2 rounded-md mt-2 "
+        >
+          Details
+        </Button>
+        <Button
+          type="submit"
+          className="w-1/2 bg-[#8C52FF] border-[#8C52FF] text-white font-medium py-2 rounded-md mt-2 hover:bg-[#7b3de8]"
+        >
+          Place A Bid
+        </Button>
+      </div>
     </div>
   );
 };
