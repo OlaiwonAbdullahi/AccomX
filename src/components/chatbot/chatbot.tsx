@@ -2,16 +2,26 @@ import { useState } from "react";
 import { LiaTimesSolid } from "react-icons/lia";
 import { LuSend } from "react-icons/lu";
 
-const Chatbot = ({ open, onClose }) => {
-  const [messages, setMessages] = useState([
+interface ChatbotProps {
+  open: boolean;
+  onClose: () => void;
+}
+
+interface Message {
+  text: string;
+  sender: "user" | "bot";
+}
+
+const Chatbot: React.FC<ChatbotProps> = ({ open, onClose }) => {
+  const [messages, setMessages] = useState<Message[]>([
     { text: "Hello! How can I assist you today?", sender: "bot" },
   ]);
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState<string>("");
 
   const handleSendMessage = () => {
     if (!input.trim()) return;
 
-    setMessages([...messages, { text: input, sender: "user" }]);
+    setMessages((prev) => [...prev, { text: input, sender: "user" }]);
     setInput("");
 
     setTimeout(() => {

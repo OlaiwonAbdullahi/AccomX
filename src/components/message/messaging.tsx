@@ -11,8 +11,10 @@ const users = [
 ];
 
 const Messaging = () => {
-  const [selectedUser, setSelectedUser] = useState(null);
-  const [messages, setMessages] = useState({});
+  const [selectedUser, setSelectedUser] = useState<number | null>(null);
+  const [messages, setMessages] = useState<
+    Record<number, { text: string; sender: string }[]>
+  >({});
   const [input, setInput] = useState("");
 
   const handleSendMessage = () => {

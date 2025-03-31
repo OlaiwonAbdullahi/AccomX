@@ -7,7 +7,7 @@ const Message = () => {
   return (
     <>
       <SEO title="AccomX | Message" />
-      <div className=" flex flex-col gap-4 bg-white">
+      <div className=" flex flex-col bg-white">
         <DashboardNavbar />
         <Messaging />
         <Menu />
