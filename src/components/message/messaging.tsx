@@ -71,8 +71,8 @@ const Messaging = () => {
           <>
             {/* Chat Header */}
             <div className="bg-[#8C52FF] text-white p-4 flex justify-between">
-              <span>
-                Chat with {users.find((u) => u.id === selectedUser)?.name}
+              <span className="font-semibold text-lg font-Sora">
+                {users.find((u) => u.id === selectedUser)?.name}
               </span>
               <button onClick={() => setSelectedUser(null)}>
                 <LiaTimesSolid className="size-5" />

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation, Link } from "react-router-dom";
 import {
   LuLayoutGrid,
   LuSparkles,
@@ -9,12 +10,12 @@ import { PiGearSix } from "react-icons/pi";
 import { LiaTimesSolid } from "react-icons/lia";
 import { TbSmartHome } from "react-icons/tb";
 import { TfiBell } from "react-icons/tfi";
-import { Link } from "react-router-dom";
 import Chatbot from "@/components/chatbot/chatbot";
 
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [openChatbot, setOpenChatbot] = useState(false);
+  const location = useLocation(); // Get current route
 
   return (
     <div className="fixed bottom-4 left-4 flex flex-col items-start">
@@ -27,14 +28,27 @@ const Menu = () => {
         }`}
       >
         <ul className="flex flex-col gap-2">
-          {menuItems.map(({ icon: Icon, label, path }, index) => (
-            <Link to={path} key={index}>
-              <li className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 rounded-md cursor-pointer">
-                <Icon className="text-gray-700 size-5" />
-                <span className="text-gray-800">{label}</span>
-              </li>
-            </Link>
-          ))}
+          {menuItems.map(({ icon: Icon, label, path }, index) => {
+            const isActive = location.pathname === path; // Check if item is active
+            return (
+              <Link to={path} key={index}>
+                <li
+                  className={`flex items-center gap-2 px-4 py-2 rounded-md cursor-pointer transition-all ${
+                    isActive
+                      ? "bg-[#8C52FF] text-white" // Active state styles
+                      : "hover:bg-gray-100 text-gray-800"
+                  }`}
+                >
+                  <Icon
+                    className={`size-5 ${
+                      isActive ? "text-white" : "text-gray-700"
+                    }`}
+                  />
+                  <span>{label}</span>
+                </li>
+              </Link>
+            );
+          })}
         </ul>
       </div>
 
@@ -73,7 +87,7 @@ const Menu = () => {
 
 const menuItems = [
   { icon: TbSmartHome, label: "Home", path: "/dashboard" },
-  { icon: LuUsers, label: "Roomates", path: "/roomates" },
+  { icon: LuUsers, label: "Roommates", path: "/roomates" },
   { icon: TfiBell, label: "Notifications", path: "/notification" },
   { icon: LuMessageCircle, label: "Messages", path: "/message" },
   { icon: PiGearSix, label: "Settings", path: "/setting" },
