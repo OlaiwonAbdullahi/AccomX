@@ -16,6 +16,7 @@ import Roomates from "./pages/roomates";
 import Message from "./pages/message";
 import Notification from "./pages/notification";
 import Messaging from "./components/message/messaging";
+import Productdetails from "./components/ui/dashboard/productlisting";
 
 // this is just for dome pages you want to repeat same component
 const Root = () => {
@@ -70,6 +71,10 @@ const router = createBrowserRouter([
       {
         path: "/messaging",
         element: <Messaging />,
+      },
+      {
+        path: "/productdetails",
+        element: <Productdetails />,
       },
 
       {
