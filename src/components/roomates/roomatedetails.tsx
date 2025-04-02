@@ -1,5 +1,5 @@
-const roomatedetails = () => {
+const Roomatedetails = () => {
   return <div>roomatedetails</div>;
 };
 
-export default roomatedetails;
+export default Roomatedetails;
