@@ -2,7 +2,8 @@ import { useState } from "react";
 import { LuSend } from "react-icons/lu";
 import { LiaTimesSolid } from "react-icons/lia";
 import { User } from "../svgs";
-
+import message from "../ui/SVG/message.svg";
+import { Image } from "../ui";
 const users = [
   { id: 1, name: "Alice Johnson" },
   { id: 2, name: "Michael Smith" },
@@ -121,6 +122,9 @@ const Messaging = () => {
           </>
         ) : (
           <div className="flex-1 flex flex-col items-center justify-center text-gray-600">
+            <div className=" flex items-center">
+              <Image src={message} className=" size-64" />
+            </div>
             <h2 className="text-xl font-semibold">
               Select a chat to start messaging
             </h2>

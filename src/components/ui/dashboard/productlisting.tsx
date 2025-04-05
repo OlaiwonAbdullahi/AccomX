@@ -16,6 +16,7 @@ import { RiVerifiedBadgeLine } from "react-icons/ri";
 import Button from "../button";
 import { PiVirtualReality } from "react-icons/pi";
 import { LiaEnvelope } from "react-icons/lia";
+import { Link } from "react-router-dom";
 
 const Productdetails = () => {
   const [reviews] = useState([
@@ -38,14 +39,19 @@ const Productdetails = () => {
         <DashboardNavbar />
         <div className="flex flex-col gap-2 w-full p-2">
           {/* Back Button */}
-          <div className="p-3">
-            <GoArrowLeft className="size-6 cursor-pointer" />
-          </div>
+          <Link to="/dashboard">
+            <div className="p-3">
+              <GoArrowLeft className="size-6 cursor-pointer" />
+            </div>
+          </Link>
           {/* Hostel Details */}
           <div className="flex p-2">
             {/* Image Gallery */}
             <div className="w-1/2">
-              <Image src="https://placehold.co/600x400" />
+              <Image
+                src="https://placehold.co/600x400"
+                className=" rounded-md"
+              />
             </div>
             {/* Hostel Information */}
             <div className="flex flex-col w-1/2 gap-2 p-1">

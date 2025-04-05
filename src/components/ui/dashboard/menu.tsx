@@ -90,7 +90,7 @@ const menuItems = [
   { icon: LuUsers, label: "Roommates", path: "/roomates" },
   { icon: TfiBell, label: "Notifications", path: "/notification" },
   { icon: LuMessageCircle, label: "Messages", path: "/message" },
-  { icon: PiGearSix, label: "Settings", path: "/setting" },
+  { icon: PiGearSix, label: "Settings", path: "/settings" },
 ];
 
 export default Menu;

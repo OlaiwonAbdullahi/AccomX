@@ -2,6 +2,7 @@ import { LuSend } from "react-icons/lu";
 import { TbListDetails } from "react-icons/tb";
 import { User } from "../svgs";
 import { Button } from "../ui";
+import { Link } from "react-router-dom";
 
 const RoommateCard = () => {
   return (
@@ -30,10 +31,12 @@ const RoommateCard = () => {
 
       {/* Actions Section */}
       <div className="flex flex-col gap-2">
-        <Button className="bg-[#8C52FF] text-white rounded-md font-medium flex items-center gap-2 px-4 py-2 shadow-md">
-          <TbListDetails className="size-5" />
-          <span>View Details</span>
-        </Button>
+        <Link to="/roomatedetails">
+          <Button className="bg-[#8C52FF] text-white rounded-md font-medium flex items-center gap-2 px-4 py-2 shadow-md">
+            <TbListDetails className="size-5" />
+            <span>View Details</span>
+          </Button>
+        </Link>
         <Button className="bg-[#8C52FF] text-white rounded-md font-medium flex items-center gap-2 px-4 py-2 shadow-md">
           <LuSend className="size-5" />
           <span>Send Message</span>
